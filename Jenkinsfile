@@ -25,11 +25,12 @@ pipeline {
             }
         }
 
-        stage('4. Push Image to Registry') {
-            steps {
-                bat "docker push ${REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER}"
-                bat "docker push ${REGISTRY}/${IMAGE_NAME}:latest"
-            }
+        stage('Push Image to Registry') {
+    steps {
+        bat '"C:\\Users\\STUDENT\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" push localhost:5000/anil-demo-app:4'
+
+        bat '"C:\\Users\\STUDENT\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" push localhost:5000/anil-demo-app:latest'
+    }
         }
     }
 
